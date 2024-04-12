@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Provider } from 'react-redux'; // Import Provider
+import store from './store'; // Import the Redux store
+import LoginForm from './components/LoginForm';
+import Dashboard from './components/Dashboard';
+import AddBeneficiaryPage from './pages/AddBeneficiaryPage';
+import ViewBeneficiaryPage from './pages/ViewBeneficaryPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}> {/* Wrap with Provider */}
+      <Router>
+        <Routes>
+          <Route path="/" element={<LoginForm />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/add-beneficiary" element={<AddBeneficiaryPage />} />
+          <Route path="/view-beneficiaries" element={<ViewBeneficiaryPage />} />
+        </Routes>
+      </Router>
+    </Provider>
   );
 }
 
