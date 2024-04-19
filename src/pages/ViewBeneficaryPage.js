@@ -5,7 +5,7 @@ import { selectBeneficiaries, selectSelectedBeneficiary, selectBeneficiary } fro
 import Navbar from '../components/Navbar';
 import BackButton from '../components/BackButton';
 import EditModal from '../components/EditModal';
-import RemoveConfirmationModal from '../components/RemoveConfirmationModal'; // Import the RemoveConfirmationModal component
+import RemoveConfirmationModal from '../components/RemoveConfirmationModal'; 
 import { editBeneficiary, removeBeneficiary } from '../features/beneficiaries/beneficiariesSlice';
 
 const ViewBeneficiaryPage = () => {
@@ -14,10 +14,9 @@ const ViewBeneficiaryPage = () => {
   const beneficiaries = useSelector(selectBeneficiaries);
   const selectedBeneficiary = useSelector(selectSelectedBeneficiary);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isRemoveConfirmationOpen, setIsRemoveConfirmationOpen] = useState(false); // State for remove confirmation modal
+  const [isRemoveConfirmationOpen, setIsRemoveConfirmationOpen] = useState(false); 
 
   const handleBeneficiaryClick = (beneficiary) => {
-    // dispatch(selectBeneficiary(beneficiary));
   };
 
   const handleEditClick = (event, beneficiary) => {
@@ -28,14 +27,11 @@ const ViewBeneficiaryPage = () => {
 
   const handleRemoveClick = (event, beneficiary) => {
     event.stopPropagation();
-    // Open the remove confirmation modal
     setIsRemoveConfirmationOpen(true);
   };
 
   const confirmRemoveBeneficiary = () => {
-    // Dispatch the removeBeneficiary action with the beneficiary ID
     dispatch(removeBeneficiary(selectedBeneficiary.id));
-    // Close the remove confirmation modal
     setIsRemoveConfirmationOpen(false);
   };
 

@@ -1,4 +1,3 @@
-// src/components/LoginForm.js
 
 import React from 'react';
 import { useForm } from 'react-hook-form';
@@ -9,12 +8,10 @@ import { useNavigate } from 'react-router-dom';
 const LoginForm = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const dispatch = useDispatch();
-  const navigate = useNavigate(); // Use the useNavigate hook from react-router-dom
+  const navigate = useNavigate(); 
 
   const onSubmit = (data) => {
-    // Dispatch login action with form data
     dispatch(login(data));
-    // Navigate to dashboard upon successful login
     navigate('/dashboard');
   };
 

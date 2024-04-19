@@ -1,4 +1,4 @@
-// src/app/store.js
+
 import { configureStore } from '@reduxjs/toolkit';
 import beneficiariesReducer from './features/beneficiaries/beneficiariesSlice';
 

@@ -1,4 +1,4 @@
-// src/pages/AddBeneficiaryPage.js
+
 
 import React from 'react';
 import AddBeneficiaryForm from '../components/AddBeneficiaryForm';

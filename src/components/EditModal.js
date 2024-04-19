@@ -1,11 +1,8 @@
-// EditModal.js
+
 import React from 'react';
 import { useForm } from 'react-hook-form';
-// import { useDispatch } from 'react-redux';
-// import { editBeneficiary } from '../features/beneficiaries/beneficiariesSlice';
 
 const EditModal = ({ beneficiary, closeModal, onSubmit }) => {
-  // const dispatch = useDispatch();
   const { register, handleSubmit, formState: { errors } } = useForm({
     defaultValues: {
       name: beneficiary.name,
@@ -16,7 +13,7 @@ const EditModal = ({ beneficiary, closeModal, onSubmit }) => {
   });
 
   const handleFormSubmit = (data) => {
-    onSubmit(data); // Call the onSubmit function passed from the parent component
+    onSubmit(data); 
   };
 
   return (

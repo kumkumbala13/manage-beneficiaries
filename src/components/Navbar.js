@@ -2,12 +2,11 @@ import React from 'react';
 import LogoutButton from './LogoutButton';
 import { useSelector } from 'react-redux';
 import { selectAuth } from '../features/auth/authSlice';
-import './Navbar.css'; // Import your CSS file
+import './Navbar.css'; 
 
 function Navbar() {
   const auth = useSelector(selectAuth);
-  const user = auth && auth.user ? auth.user : {}; // Ensure auth and user objects are defined
-
+  const user = auth && auth.user ? auth.user : {}; 
   return (
     <div className="navbar">
       {user && user.username ? (

@@ -1,4 +1,4 @@
-// src/features/beneficiaries/beneficiariesSlice.js
+
 
 import { createSlice } from '@reduxjs/toolkit';
 
@@ -6,7 +6,6 @@ const initialState = {
   beneficiaries: [
     { id: 1, name: 'John Doe', accountNumber: '1234567890', bankName: 'ABC Bank', accountType: 'Savings' },
     { id: 2, name: 'Jane Smith', accountNumber: '0987654321', bankName: 'XYZ Bank', accountType: 'Checking' },
-    // Add more mock beneficiaries as needed
   ],
   selectedBeneficiary: null,
 };
