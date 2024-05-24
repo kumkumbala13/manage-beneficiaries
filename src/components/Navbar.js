@@ -6,7 +6,9 @@ import './Navbar.css';
 
 function Navbar() {
   const auth = useSelector(selectAuth);
+  console.log("Auth:", auth); 
   const user = auth && auth.user ? auth.user : {}; 
+  console.log("User:", user);
   return (
     <div className="navbar">
       {user && user.username ? (

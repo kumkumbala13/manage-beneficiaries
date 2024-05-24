@@ -1,11 +1,11 @@
 
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { addBeneficiary } from '../features/beneficiaries/beneficiariesSlice';
 import BackButton from './BackButton';
-import Navbar from './Navbar';
+// import Navbar from './Navbar';
 import { Link } from 'react-router-dom';
 
 
@@ -26,6 +26,17 @@ const AddBeneficiaryForm = () => {
     setShowNotification(true);
     setShowConfirmation(false);
   };
+
+  // Effect to hide notification after 5 seconds
+  useEffect(() => {
+    let timeout;
+    if (showNotification) {
+      timeout = setTimeout(() => {
+        setShowNotification(false);
+      }, 1000);
+    }
+    return () => clearTimeout(timeout);
+  }, [showNotification]);
 
   return (
   <>
@@ -77,9 +88,8 @@ const AddBeneficiaryForm = () => {
 
       {/* Success notification */}
       {showNotification && (
-        <div className="bg-green-200 border-green-600 border-l-4 text-green-900 p-4 mt-4">
-          <p className="font-bold">Success!</p>
-          <p>New beneficiary added.</p>
+        <div className="text-center bg-green-200 border-green-600 text-green-900 p-2 mt-2">
+          <p className="font-bold"> New beneficiary added successfully !</p>
         </div>
       )}
     </form>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { selectBeneficiaries, selectSelectedBeneficiary, selectBeneficiary } from '../features/beneficiaries/beneficiariesSlice';
 import Navbar from '../components/Navbar';
 import BackButton from '../components/BackButton';
@@ -10,13 +10,17 @@ import { editBeneficiary, removeBeneficiary } from '../features/beneficiaries/be
 
 const ViewBeneficiaryPage = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const beneficiaries = useSelector(selectBeneficiaries);
   const selectedBeneficiary = useSelector(selectSelectedBeneficiary);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isRemoveConfirmationOpen, setIsRemoveConfirmationOpen] = useState(false); 
 
   const handleBeneficiaryClick = (beneficiary) => {
+    if (selectedBeneficiary && selectedBeneficiary.id === beneficiary.id) {
+      dispatch(selectBeneficiary(null)); 
+    } else {
+      dispatch(selectBeneficiary(beneficiary)); 
+    }
   };
 
   const handleEditClick = (event, beneficiary) => {

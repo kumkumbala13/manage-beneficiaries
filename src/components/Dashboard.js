@@ -2,8 +2,8 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { selectAuth } from '../features/auth/authSlice';
+// import { useSelector } from 'react-redux';
+// import { selectAuth } from '../features/auth/authSlice';
 import './Dashboard.css'
 // import LogoutButton from './LogoutButton';
 import Navbar from './Navbar';
