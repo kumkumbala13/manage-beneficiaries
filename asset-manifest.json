@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/manage-beneficiaries/static/css/main.1352ea33.css",
+    "main.js": "/manage-beneficiaries/static/js/main.97496eba.js",
+    "index.html": "/manage-beneficiaries/index.html",
+    "main.1352ea33.css.map": "/manage-beneficiaries/static/css/main.1352ea33.css.map",
+    "main.97496eba.js.map": "/manage-beneficiaries/static/js/main.97496eba.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1352ea33.css",
+    "static/js/main.97496eba.js"
+  ]
+}
