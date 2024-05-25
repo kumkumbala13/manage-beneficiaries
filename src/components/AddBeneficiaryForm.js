@@ -27,7 +27,6 @@ const AddBeneficiaryForm = () => {
     setShowConfirmation(false);
   };
 
-  // Effect to hide notification after 5 seconds
   useEffect(() => {
     let timeout;
     if (showNotification) {
